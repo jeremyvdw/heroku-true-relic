@@ -12,7 +12,7 @@ module HerokuTrueRelic
       now = Time.now.to_f
 
       # Delete Heroku's queue time header because it's incorrect and useless
-      env.delete("HTTP_X_HEROKU_QUEUE_WAIT_TIME")
+      # env.delete("HTTP_X_HEROKU_QUEUE_WAIT_TIME")
 
       microseconds = (now * 1_000_000).to_i
       env["HTTP_X_MIDDLEWARE_START"] = "t=#{microseconds}"
